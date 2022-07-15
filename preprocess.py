@@ -27,7 +27,7 @@ def load_pickle():
 def data2dataset():
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     
-    if not os.path.isdir('train_pos.pkl'):
+    if not os.path.isfile('train_pos.pkl'):
         save_pickle(tokenizer)
     train_pos, train_neg, dev_pos, dev_neg = load_pickle()
     
