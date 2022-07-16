@@ -3,7 +3,7 @@ import os.path
 import torch
 from torch.nn.utils.rnn import pad_sequence
 import numpy as np
-
+from sklearn.model_selection import train_test_split
 
 def make_id_file(task, tokenizer):
     def make_data_strings(file_name):
@@ -104,3 +104,8 @@ def collate_fn_style_test(samples):
 
 def compute_acc(predictions, target_labels):
     return (np.array(predictions) == np.array(target_labels)).mean()
+
+
+def get_small_sample(dataset, getting_size = 0.2):
+  _, small_sample = train_test_split(dataset, test_size=getting_size, random_state=42)
+  return small_sample
