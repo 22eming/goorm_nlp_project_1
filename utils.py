@@ -14,10 +14,10 @@ def make_id_file(task, tokenizer):
             data_strings.append(' '.join([str(k) for k in item]))
         return data_strings
     
-    train_pos = make_data_strings('sentiment.train.1')
-    train_neg = make_data_strings('sentiment.train.0')
-    dev_pos = make_data_strings('sentiment.dev.1')
-    dev_neg = make_data_strings('sentiment.dev.0')
+    train_pos = make_data_strings('data/sentiment.train.1')
+    train_neg = make_data_strings('data/sentiment.train.0')
+    dev_pos = make_data_strings('data/sentiment.dev.1')
+    dev_neg = make_data_strings('data/sentiment.dev.0')
 
     return train_pos, train_neg, dev_pos, dev_neg
 
